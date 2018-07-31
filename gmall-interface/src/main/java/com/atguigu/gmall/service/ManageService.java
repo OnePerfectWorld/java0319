@@ -31,5 +31,10 @@ public interface ManageService {
 
     void saveSpuInfo(SpuInfo spuInfo);
 
+    List<SpuImage> getSpuImageList(String spuId);
+
+    List<SpuSaleAttr> getSpuSaleAttrList(String spuId);
+
+    void saveSku(SkuInfo skuInfo);
 }
 

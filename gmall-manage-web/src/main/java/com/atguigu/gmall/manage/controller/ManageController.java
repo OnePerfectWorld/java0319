@@ -65,11 +65,11 @@ public class ManageController {
         return baseCatalog3List;
     }
 
-
+    //
     //根据三级分类getBaseCatalog3Id查询平台属性信息
     @RequestMapping("/getBaseAttrInfoList")
     @ResponseBody
-    public List<BaseAttrInfo> getBaseAttrInfoList(@RequestParam String baseCatalog3Id){
+    public List<BaseAttrInfo> getBaseAttrInfoList(@RequestParam("catalog3Id") String baseCatalog3Id){
         List<BaseAttrInfo> baseAttrInfoList = manageService.getBaseAttrInfoList(baseCatalog3Id);
         return baseAttrInfoList;
     }
