@@ -23,7 +23,7 @@
     <resultMap id="BaseAttrInfoMap" type="com.atguigu.gmall.bean.BaseAttrInfo" autoMapping="true">
         <id property="id" column="id"></id>
         <collection property="baseAttrValueList" ofType="com.atguigu.gmall.bean.BaseAttrValue" autoMapping="true">
-            <id property="id" column="id"></id>
+            <id property="id" column="attr_value_id"></id>
 
         </collection>
 

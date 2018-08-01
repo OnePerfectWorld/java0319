@@ -68,8 +68,8 @@
         var spuImgDgRows = $("#spuImgDg").datagrid("getRows");
         for (var i = 0; i < spuImgDgRows.length; i++) {
             var spuImg = spuImgDgRows[i];
-            spuInfo["spuSaleAttrList["+i+"].imgName"]=spuImg.imgName;
-            spuInfo["spuSaleAttrList["+i+"].imgUrl"]=spuImg.imgUrl;
+            spuInfo["spuImageList["+i+"].imgName"]=spuImg.imgName;
+            spuInfo["spuImageList["+i+"].imgUrl"]=spuImg.imgUrl;
         }
 
         //获取销售属性列表
@@ -82,7 +82,7 @@
             //销售属性值
             var saleAttrValueRows = spuSaleAttrDgRows[i].spuSaleAttrValueJson.rows;
             for (var j = 0; j < saleAttrValueRows.length; j++) {
-                var saleAttrValue = spuSaleAttrDgRows[j];
+                var saleAttrValue = saleAttrValueRows[j];
                 spuInfo["spuSaleAttrList["+i+"].spuSaleAttrValueList["+j+"].id"]=saleAttrValue.id;
                 spuInfo["spuSaleAttrList["+i+"].spuSaleAttrValueList["+j+"].saleAttrId"]=spuSaleAttrDgRows[i].saleAttrId;
                 spuInfo["spuSaleAttrList["+i+"].spuSaleAttrValueList["+j+"].saleAttrValueName"]=saleAttrValue.saleAttrValueName;
@@ -267,7 +267,7 @@
         $('#spuImgUploadBtn').click(function(){
             console.log("开始上传");
             if(spuImgUploader.getFiles().length<=0){
-                $.messager().alert('警告','没有需要上传的文件','warning');
+                $.messager.alert('警告','没有需要上传的文件','warning');
                 return;
             }
             spuImgUploader.upload();

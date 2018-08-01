@@ -94,7 +94,7 @@ public class ManageServiceImpl implements ManageService {
             baseAttrInfoMapper.updateByPrimaryKey(baseAttrInfo);
         }else{
             baseAttrInfo.setId(null);
-            baseAttrInfoMapper.insert(baseAttrInfo);
+            baseAttrInfoMapper.insertSelective(baseAttrInfo);
         }
 
         //修改时，要把属性所对应的属性值全部删除
@@ -109,7 +109,7 @@ public class ManageServiceImpl implements ManageService {
                     baseAttrValue.setId(null);
                 }
                 baseAttrValue.setAttrId(baseAttrInfo.getId());
-                baseAttrValueMapper.insert(baseAttrValue);
+                baseAttrValueMapper.insertSelective(baseAttrValue);
             }
         }
 
